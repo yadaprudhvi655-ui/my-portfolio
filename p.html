@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yada Madhav Rao Pooja Store</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to bottom, #fff8e7, #ffe8c2);
+      color: #4b2e0f;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #8b0000, #d2691e);
+      color: white;
+      text-align: center;
+      padding: 25px 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 2.4rem;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: #ffe7a3;
+    }
+
+    nav {
+      margin-top: 15px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: url('https://images.unsplash.com/photo-1604608672516-7d6d7d9bfb87?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+      color: white;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(90, 35, 0, 0.6);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .hero h2 {
+      font-size: 2.8rem;
+      margin-bottom: 15px;
+      color: #ffd700;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background: #ffd700;
+      color: #8b0000;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 30px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #fff;
+      transform: scale(1.05);
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+      color: #8b0000;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: "🪔";
+      display: block;
+      margin-top: 10px;
+      font-size: 1.5rem;
+    }
+
+    .about {
+      text-align: center;
+      font-size: 1.1rem;
+      max-width: 900px;
+      margin: auto;
+      background: #fff7ea;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .items-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .item-card {
+      background: white;
+      border-radius: 15px;
+      padding: 25px 20px;
+      text-align: center;
+      box-shadow: 0 5px 14px rgba(0,0,0,0.12);
+      transition: 0.3s;
+      border-top: 5px solid #d2691e;
+    }
+
+    .item-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+    }
+
+    .item-card h3 {
+      color: #8b0000;
+      margin-bottom: 12px;
+      font-size: 1.3rem;
+    }
+
+    .item-card p {
+      color: #5a3b1e;
+      font-size: 0.98rem;
+    }
+
+    .contact-box {
+      background: linear-gradient(135deg, #fff2d9, #ffe1a8);
+      padding: 35px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 5px 14px rgba(0,0,0,0.12);
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .contact-box p {
+      font-size: 1.1rem;
+      margin: 12px 0;
+    }
+
+    .contact-box strong {
+      color: #8b0000;
+    }
+
+    footer {
+      background: #8b0000;
+      color: white;
+      text-align: center;
+      padding: 18px;
+      margin-top: 40px;
+      font-size: 0.95rem;
+    }
+
+    .devotional-line {
+      text-align: center;
+      font-size: 1.1rem;
+      color: #8b0000;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      .hero h2 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Yada Madhav Rao Pooja Store</h1>
+    <p>All Pooja Items Available with Devotion and Purity</p>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#items">Pooja Items</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h2>Welcome to Yada Madhav Rao Pooja Store</h2>
+      <p>
+        Your one-stop destination for all pooja essentials, devotional products,
+        festival items, temple supplies, and sacred offerings.
+      </p>
+      <a href="#items" class="btn">View Pooja Items</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2 class="section-title">About Our Store</h2>
+    <div class="about">
+      <p>
+        <strong>Yada Madhav Rao Pooja Store</strong> is a devotional pooja shop where you can find
+        all pooja items required for daily worship, festivals, homams, vrathams, temple offerings,
+        and special occasions. We provide quality products with devotion, purity, and trust.
+      </p>
+      <p class="devotional-line">🪔 “Bhakti, Purity, and Tradition in Every Pooja Item” 🪔</p>
+    </div>
+  </section>
+
+  <section id="items">
+    <h2 class="section-title">Our Pooja Items</h2>
+    <div class="items-grid">
+
+      <div class="item-card">
+        <h3>🪔 Diyas & Lamps</h3>
+        <p>Brass lamps, clay diyas, deepams, and decorative pooja lights.</p>
+      </div>
+
+      <div class="item-card">
+        <h3>🌸 Flowers & Garlands</h3>
+        <p>Fresh flowers, pooja malas, garlands, and floral offerings.</p>
+      </div>
+
+      <div class="item-card">
+        <h3>🥥 Coconut & Fruits</h3>
+        <p>Coconuts, bananas, apples, and fruits for pooja and prasadam.</p>
+      </div>
+
+      <div class="item-card">
+        <h3>🧧 Kumkum & Turmeric</h3>
+        <p>Kumkum, pasupu, sandal powder, vibhuti, and sacred powders.</p>
+      </div>
+
+      <div class="item-card">
+        <h3>🔥 Agarbatti & Camphor</h3>
+        <p>Incense sticks, dhoop, sambrani, camphor, and fragrant pooja essentials.</p>
+      </div>
+
+      <div class="item-card">
+        <h3>📿 Rudraksha & Mala</h3>
+        <p>Rudraksha malas, tulasi malas, japamalas, and spiritual accessories.</p>
+      </div>
+
+      <div class="item-card">
+        <h3>🙏 God Photos & Idols</h3>
+        <p>God idols, framed devotional photos, temple décor, and pooja mandir items.</p>
+      </div>
+
+      <div class="item-card">
+        <h3>🍯 Pooja Plates & Accessories</h3>
+        <p>Pooja thalis, bells, kalash, aarti plates, conch, and sacred utensils.</p>
+      </div>
+
+      <div class="item-card">
+        <h3>🎉 Festival Special Items</h3>
+        <p>Ganesh Chaturthi items, Navratri pooja items, Diwali pooja sets, and more.</p>
+      </div>
+
+      <div class="item-card">
+        <h3>🕉️ Homam & Vratham Items</h3>
+        <p>Homam samagri, havan items, sacred wood, ghee, and pooja kits.</p>
+      </div>
+
+      <div class="item-card">
+        <h3>🍚 Prasadam Items</h3>
+        <p>Rice, jaggery, dry fruits, betel leaves, nuts, and offerings for prasadam.</p>
+      </div>
+
+      <div class="item-card">
+        <h3>🎁 Complete Pooja Sets</h3>
+        <p>Ready-made pooja kits for Satyanarayana Vratham, Ganesh Pooja, Lakshmi Pooja and more.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title">Contact Us</h2>
+    <div class="contact-box">
+      <p><strong>Store Name:</strong> Yada Madhav Rao Pooja Store</p>
+      <p><strong>Contact Number:</strong> +91 98765 43210</p>
+      <p><strong>Email:</strong> yadamadhavraopoojastore@gmail.com</p>
+      <p><strong>Address:</strong> Add your shop address here</p>
+      <p><strong>Available Items:</strong> All Pooja Items, Festival Items, Daily Devotional Products</p>
+      <p class="devotional-line">🙏 Visit our store and bring home divine blessings 🙏</p>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Yada Madhav Rao Pooja Store | All Rights Reserved
+  </footer>
+
+</body>
+</html>

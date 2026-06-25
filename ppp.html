@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pooja Store</title>
+
+<style>
+  body {
+    font-family: Arial;
+    margin: 0;
+    background: #fff8e7;
+  }
+
+  header {
+    background: linear-gradient(135deg,#8b0000,#d2691e);
+    color: white;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .card {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .card:hover {
+    transform: scale(1.03);
+  }
+
+  .card h3 {
+    color: #8b0000;
+  }
+
+  /* PRODUCT PAGE */
+  .product-page {
+    display: none;
+    text-align: center;
+    padding: 30px;
+  }
+
+  .product-box {
+    background: white;
+    display: inline-block;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+
+  .product-box img {
+    width: 250px;
+    border-radius: 10px;
+  }
+
+  .price {
+    font-size: 22px;
+    color: green;
+    font-weight: bold;
+  }
+
+  .btn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: gold;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    font-weight: bold;
+  }
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🪔 Yada Madhav Rao Pooja Store</h1>
+</header>
+
+<!-- HOME PAGE -->
+<div id="home">
+
+  <div class="container">
+
+    <div class="card" onclick="openProduct('Durbar Bathi','135','https://m.media-amazon.com/images/I/71z3Q5Q5y0L._SL1500_.jpg')">
+      <h3>🔥 Durbar Bathi</h3>
+      <p>Click to view details</p>
+    </div>
+
+    <div class="card" onclick="openProduct('Heaven Agarbatti','275','https://m.media-amazon.com/images/I/61h3Q7X0k6L._SL1200_.jpg')">
+      <h3>🔥 Heaven Agarbatti</h3>
+      <p>Click to view details</p>
+    </div>
+
+    <div class="card" onclick="openProduct('Herbal Kumkum','50','https://m.media-amazon.com/images/I/81Kkumkum.jpg')">
+      <h3>🧧 Herbal Kumkum</h3>
+      <p>Click to view details</p>
+    </div>
+
+    <div class="card" onclick="openProduct('Turmeric Sticks','150','https://m.media-amazon.com/images/I/81Turmeric.jpg')">
+      <h3>🟡 Turmeric Sticks</h3>
+      <p>Click to view details</p>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- PRODUCT PAGE -->
+<div id="product" class="product-page">
+
+  <div class="product-box">
+    <img id="img">
+    <h2 id="name"></h2>
+    <p class="price">₹ <span id="price"></span></p>
+
+    <button class="btn" onclick="goBack()">⬅ Back</button>
+  </div>
+
+</div>
+
+<script>
+  function openProduct(name, price, img) {
+    document.getElementById("home").style.display = "none";
+    document.getElementById("product").style.display = "block";
+
+    document.getElementById("name").innerText = name;
+    document.getElementById("price").innerText = price;
+    document.getElementById("img").src = img;
+  }
+
+  function goBack() {
+    document.getElementById("product").style.display = "none";
+    document.getElementById("home").style.display = "block";
+  }
+</script>
+
+</body>
+</html>
